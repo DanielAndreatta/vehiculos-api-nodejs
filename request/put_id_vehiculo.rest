@@ -1,0 +1,10 @@
+PUT http://localhost:3001/api/notes/60fa567c9054e81f3c1ca4c9
+Content-Type: application/json
+
+{
+    "vehiculo" : "Integra Prueba 1.0",
+    "marca": "Marca",
+    "ano" : 2000,
+    "descripcion" : "se ha cambiado la descripcion, marca, el año, nombre y vendido",
+    "vendido": true
+}

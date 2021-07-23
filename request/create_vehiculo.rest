@@ -1,0 +1,23 @@
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo" : "Integra GS 1.8",
+    "marca" : "Acura",
+    "ano" : 1996,
+    "descripcion" : "vehiculo grande",
+    "vendido" : false
+}
+
+###
+
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo": "Legend 3.2/3.5",
+    "marca": "Acura",
+    "ano": 1997,
+    "descripcion": "vehiculo grande",
+    "vendido": false
+}
