@@ -33,20 +33,21 @@ const Vehiculo = require('../models/Vehiculo')
 
 //  /vehiculos
 
-exports.mostrarVehiculos = async (request, response) => {
+// muestra todos los vehiculos
+exports.mostrarVehiculos = async (request, response, next) => {
     
     const vehiculos = await Vehiculo.find({})
 
     response.json(vehiculos)
 };
 
+// crea un vehiculo
+exports.crearVehiculo = async(request,response,next) => {
 
-exports.crearVehiculo = async(req,res,next) => {
-
-    const {vehiculo, marca, ano, descripcion, vendido = false} = req.body;
+    const {vehiculo, marca, ano, descripcion, vendido = false} = request.body;
 
     if(!vehiculo || !marca || !ano || !descripcion){
-        return res.status(400).json({
+        return response.status(400).json({
             error: 'Falta un campo obligatorio'
         });
     }
@@ -66,7 +67,7 @@ exports.crearVehiculo = async(req,res,next) => {
     try {
         
         const savedVehiculo = await newVehiculo.save();
-        res.status(201).json(savedVehiculo);
+        response.status(201).json(savedVehiculo);
     } catch (error) {
         next(error);
     }
@@ -77,35 +78,107 @@ exports.crearVehiculo = async(req,res,next) => {
 
 //  /vehiculos/:id
 
-exports.mostrarVehiculoId = async (request, response) => {
-    const {id} = request.params
+// muestra un vehiculo por id
+exports.mostrarVehiculoId = async (request, response, next) => {
     
-    Vehiculo.findById(id).then( vehiculo => {
-        if (vehiculo) {
-            response.json(vehiculo)
+    try {
+        const {id} = request.params
+
+        const findVehiculo = await Vehiculo.findById(id)
+        if (findVehiculo) {
+            response.status(200).json(findVehiculo);
         } else {
             response.status(404).end()
         }
-    }).catch(err => {
-        next(err)
-    })
+        
+
+    } catch (error) {
+        next(error);
+    }
 }
 
-exports.updateVehiculoId = async (request, response) => {
+// actualizar un vehiculo
+exports.updateVehiculoId = async (request, response, next) => {
+   
+    try {
 
+        const {id} = request.params
+        const vehiculoBody = request.body
+    
+        const newVehiculo = {
+            vehiculo: vehiculoBody.vehiculo,
+            marca: vehiculoBody.marca,
+            ano: vehiculoBody.ano,
+            descripcion: vehiculoBody.descripcion,
+            vendido: vehiculoBody.vendido,
+            updated: new Date()
+        }
+
+        const savedVehiculo = await Vehiculo.findByIdAndUpdate(id, newVehiculo, {new: true})
+        response.status(200).json(savedVehiculo);
+
+    } catch (error) {
+        next(error);
+    }
 }
 
-// exports.cambiarEstadoVendido = async (request, response) => {
+// cambiar estado de vendido
+exports.cambiarEstadoVendido = async (request, response, next) => {
 
-// }
+    try {
+        const { id } = request.params;
+        const vehiculo = await Vehiculo.findById(id);
+    
+        // cambiar el estado
+        let estado = false;
+        if(vehiculo.vendido === estado) {
+            estado = true;
+        }
+    
+        const newVehiculo = {
+            vendido: estado,
+            updated: new Date()
+        }
 
-// exports.borrarVehiculoId = async (request, response) => {
 
-// }
+        const savedVehiculo = await Vehiculo.findByIdAndUpdate(id, newVehiculo, {new: true})
+        response.status(200).json(savedVehiculo);
+
+    } catch (error) {
+        next(error);
+    }
+    
+}
+
+// borrar vehiculo
+exports.borrarVehiculoId = async (request, response, next) => {
+    
+
+    const {id} = request.params
+    
+    try {
+        await Vehiculo.findByIdAndDelete(id)
+        response.status(204).end()
+    } catch (error) {
+        next(error)
+    }
+    
+}
 
 
-// //  /vehiculos/find
+//  /vehiculos/find
+exports.buscarVehiculo = async (request, response, next) => {
+    // console.log(request.query.ano)
+    // response.end(JSON.stringify(request.query.ano)+'\r\n')
+    // const {ano} = req.query
+    // console.log(typeof(ano))
+    // const busqueda = await Vehiculo.find({ ano: findVehiculo },function(err, busqueda) {
+    //     if (err) {
+    //         response.status(404).end()
+    //         next(err)
+    //     }
+    // })
 
-// exports.buscarPorMarca = async (request, response) => {
-
-// }
+    // response.status(200).json(busqueda)
+    
+}

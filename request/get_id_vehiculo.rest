@@ -5,3 +5,12 @@ GET http://localhost:3000/vehiculos/60fa540e46283846a07eea01
 ###
 
 GET http://localhost:3000/vehiculos/60fa567c9054e81f3c1ca4c9
+
+###
+
+GET http://localhost:3000/vehiculos/60fb5b6fb5e495397853e382
+###
+
+
+// no existe
+GET http://localhost:3000/vehiculos/60fa567c9054e81f3c1ca4cT

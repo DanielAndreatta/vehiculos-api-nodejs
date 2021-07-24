@@ -21,3 +21,16 @@ Content-Type : application/json
     "descripcion": "vehiculo grande",
     "vendido": false
 }
+
+###
+
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo": "NSX3.0",
+    "marca": "Acura",
+    "ano": 2000,
+    "descripcion": "vehiculo grande",
+    "vendido": false
+}

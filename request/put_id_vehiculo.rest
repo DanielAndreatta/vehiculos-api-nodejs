@@ -1,4 +1,4 @@
-PUT http://localhost:3001/api/notes/60fa567c9054e81f3c1ca4c9
+PUT http://localhost:3000/vehiculos/60fa567c9054e81f3c1ca4c9
 Content-Type: application/json
 
 {
@@ -7,4 +7,17 @@ Content-Type: application/json
     "ano" : 2000,
     "descripcion" : "se ha cambiado la descripcion, marca, el año, nombre y vendido",
     "vendido": true
+}
+
+###
+
+PUT http://localhost:3000/vehiculos/60fa567c9054e81f3c1ca4c9
+Content-Type: application/json
+
+{
+    "vehiculo": "Legend 3.2/3.5",
+    "marca": "Acura",
+    "ano": 1997,
+    "descripcion": "vehiculo grande",
+    "vendido": false
 }

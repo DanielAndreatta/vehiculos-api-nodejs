@@ -1,0 +1,2 @@
+PATCH http://localhost:3000/vehiculos/60fa567c9054e81f3c1ca4c9
+Content-Type: application/json
