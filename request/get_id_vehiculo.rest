@@ -1,14 +1,14 @@
 
 // muestra todos los vehiculos
-GET http://localhost:3000/vehiculos/60fa540e46283846a07eea01
+GET http://localhost:3000/vehiculos/60fe06b1ce926a187c2e8d34
 
 ###
 
-GET http://localhost:3000/vehiculos/60fa567c9054e81f3c1ca4c9
+GET http://localhost:3000/vehiculos/60fe06b3ce926a187c2e8d38
 
 ###
 
-GET http://localhost:3000/vehiculos/60fb5b6fb5e495397853e382
+GET http://localhost:3000/vehiculos/60fe06b5ce926a187c2e8d3c
 ###
 
 

@@ -168,17 +168,19 @@ exports.borrarVehiculoId = async (request, response, next) => {
 
 //  /vehiculos/find
 exports.buscarVehiculo = async (request, response, next) => {
-    // console.log(request.query.ano)
-    // response.end(JSON.stringify(request.query.ano)+'\r\n')
-    // const {ano} = req.query
-    // console.log(typeof(ano))
-    // const busqueda = await Vehiculo.find({ ano: findVehiculo },function(err, busqueda) {
-    //     if (err) {
-    //         response.status(404).end()
-    //         next(err)
-    //     }
-    // })
 
-    // response.status(200).json(busqueda)
+    const marcaQuery = request.query.marca
+    const anoQuery = request.query.ano
     
+    try {
+
+        const savedVehiculo = await Vehiculo.find( marcaQuery && anoQuery ? {$and:[{marca: marcaQuery},{ano: anoQuery} ]} : {$or:[{marca: marcaQuery},{ano: anoQuery} ]})
+           
+        response.status(200).json(savedVehiculo)
+
+    } catch (error) {
+        
+        next(error)
+    }
+
 }
