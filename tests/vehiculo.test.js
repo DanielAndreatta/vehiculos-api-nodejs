@@ -147,7 +147,6 @@ describe('test a GET(/vehiculos/:id)', () => {
 
 
 
-
 afterAll( () => {
     moongose.connection.close();
     server.close();
