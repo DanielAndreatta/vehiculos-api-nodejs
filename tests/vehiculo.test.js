@@ -113,7 +113,7 @@ describe('test a POST(/vehiculos)', () => {
 })
 
 
-describe('test a GET(/vehiculos/:id)', () => {
+describe('test a DELETE(/vehiculos/:id)', () => {
 
     test('debe borrarse un vehiculo', async () => {
         const {response: firstResponse} = await getAllFromVehiculos()

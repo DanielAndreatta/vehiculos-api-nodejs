@@ -4,6 +4,7 @@ const Vehiculo = require('../models/Vehiculo')
 
 const api = supertest(app)
 
+
 const initialVehiculos = [
     {
     vehiculo: "Integra GS 1.8",
