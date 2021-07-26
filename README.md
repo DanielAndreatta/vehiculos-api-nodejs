@@ -39,7 +39,7 @@ Actualiza los datos de un vehículo.
 
 `PATCH /vehiculos/{id}`
 
-Cambia el estado de `vendido` del vehículo con la id correspondiente.
+Cambia el estado de `vendido` del vehículo de la id correspondiente.
 
 ---
 

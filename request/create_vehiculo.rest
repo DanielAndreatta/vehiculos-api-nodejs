@@ -1,3 +1,26 @@
+
+//sin subir 
+###
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo" : "Corolla Fielder SW S  1.8 16V 136cv Aut",
+    "marca" : "Toyota",
+    "ano" : 1997,
+    "descripcion": "descripción del vehículo",
+    "vendido" : false
+}
+
+
+
+
+
+
+
+//subidos
+###
+
 POST http://localhost:3000/vehiculos
 Content-Type : application/json
 
@@ -5,7 +28,7 @@ Content-Type : application/json
     "vehiculo" : "Integra GS 1.8",
     "marca" : "Acura",
     "ano" : 1996,
-    "descripcion" : "vehiculo grande",
+    "descripcion": "descripción del vehículo",
     "vendido" : false
 }
 
@@ -18,7 +41,7 @@ Content-Type : application/json
     "vehiculo": "Legend 3.2/3.5",
     "marca": "Acura",
     "ano": 1997,
-    "descripcion": "vehiculo grande",
+    "descripcion": "descripción del vehículo",
     "vendido": false
 }
 
@@ -31,6 +54,84 @@ Content-Type : application/json
     "vehiculo": "NSX3.0",
     "marca": "Acura",
     "ano": 2000,
-    "descripcion": "vehiculo grande",
+    "descripcion": "descripción del vehículo",
     "vendido": false
+}
+
+###
+
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo": "145 Elegant 2.0 16V",
+    "marca": "Alfa Romeo",
+    "ano": 1998,
+    "descripcion": "descripción del vehículo",
+    "vendido": false
+}
+
+###
+
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo": "Spider 2.0/3.0",
+    "marca": "Alfa Romeo",
+    "ano": 1995,
+    "descripcion": "descripción del vehículo",
+    "vendido": false
+}
+
+###
+
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo": "A3 1.8 3p",
+    "marca": "Audi",
+    "ano": 2001,
+    "descripcion": "descripción del vehículo",
+    "vendido": false
+}
+
+###
+
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo": "Punto BLACKMOTION 1.8 Flex 16V 5p.",
+    "marca": "Fiat",
+    "ano": 1999,
+    "descripcion": "descripción del vehículo",
+    "vendido": false
+}
+
+###
+
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo": "Twingo Pack 1.0 16V 70cv",
+    "marca": "Renault",
+    "ano": 1996,
+    "descripcion": "descripción del vehículo",
+    "vendido": false
+}
+
+###
+
+POST http://localhost:3000/vehiculos
+Content-Type : application/json
+
+{
+    "vehiculo" : "Corolla GLi 1.8 Flex 16V Mec.",
+    "marca" : "Toyota",
+    "ano" : 1997,
+    "descripcion": "descripción del vehículo",
+    "vendido" : false
 }

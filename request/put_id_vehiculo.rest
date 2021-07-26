@@ -11,6 +11,19 @@ Content-Type: application/json
 
 ###
 
+PUT http://localhost:3000/vehiculos/60fe06b1ce926a187c2e8d34
+Content-Type: application/json
+
+{
+    "vehiculo": "Integra GS 1.8",
+    "marca": "Acura",
+    "ano": 1996,
+    "descripcion": "descripción del vehículo",
+    "vendido": false
+}
+
+###
+
 PUT http://localhost:3000/vehiculos/60fe06b3ce926a187c2e8d38
 Content-Type: application/json
 
@@ -18,6 +31,19 @@ Content-Type: application/json
     "vehiculo": "Legend 3.2/3.5",
     "marca": "Acura",
     "ano": 1997,
-    "descripcion": "vehiculo grande",
+    "descripcion": "descripción del vehículo",
+    "vendido": true
+}
+
+###
+
+PUT http://localhost:3000/vehiculos/60fe06b5ce926a187c2e8d3c
+Content-Type: application/json
+
+{
+    "vehiculo": "NSX3.0",
+    "marca": "Acura",
+    "ano": 2000,
+    "descripcion": "descripción del vehículo",
     "vendido": false
 }

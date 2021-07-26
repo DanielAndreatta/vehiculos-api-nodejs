@@ -1,1 +1,12 @@
-DELETE http://localhost:3000/vehiculos/60fb5b6fb5e495397853e382
+DELETE http://localhost:3000/vehiculos/60fefe65ef3fe229642d63fa
+
+
+//Borra el auto
+
+# {
+#     "vehiculo": "Spider 2.0/3.0",
+#     "marca": "Alfa Romeo",
+#     "ano": 1995,
+#     "descripcion": "descripción del vehículo",
+#     "vendido": false
+# }
