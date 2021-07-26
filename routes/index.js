@@ -17,19 +17,17 @@ module.exports = function(){
     router.get('/vehiculos',vehiculosController.mostrarVehiculos);
     router.post('/vehiculos',vehiculosController.crearVehiculo);
 
+    router.get('/vehiculos/find', vehiculosController.buscarVehiculo);
 
 
-    router.get('/vehiculos/:id', vehiculosController.mostrarVehiculoId)
-
-    router.put('/vehiculos/:id', vehiculosController.updateVehiculoId)
-
-    router.patch('/vehiculos/:id', vehiculosController.cambiarEstadoVendido)
-
-    router.delete('/vehiculos/:id', vehiculosController.borrarVehiculoId)
+    router.get('/vehiculos/:id', vehiculosController.mostrarVehiculoId);
+    router.put('/vehiculos/:id', vehiculosController.updateVehiculoId);
+    router.patch('/vehiculos/:id', vehiculosController.cambiarEstadoVendido);
+    router.delete('/vehiculos/:id', vehiculosController.borrarVehiculoId);
 
 
 
-    router.get('/vehiculos/find', vehiculosController.buscarVehiculo)
+    
 
     return router;
 }

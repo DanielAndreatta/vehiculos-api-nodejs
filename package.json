@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "lint": "npm run lint",
     "start": "cross-env NODE_ENV=production node index.js",
-    "test": "cross-env NODE_ENV=test PORT=3001 jest --verbose --silent",
+    "test": "cross-env NODE_ENV=test PORT=3003 jest --verbose tests/user.test.js",
     "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
@@ -30,7 +31,7 @@
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json",
     "env": {
-      "jest": true
+      "jest": "true"
     }
   },
   "jest": {

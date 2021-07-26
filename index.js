@@ -1,5 +1,5 @@
-require('dotenv').config()
-require('./mongo')
+require('dotenv').config();
+require('./mongo');
 
 const express = require('express');
 const routes = require('./routes');

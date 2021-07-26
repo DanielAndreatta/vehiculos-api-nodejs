@@ -75,6 +75,26 @@ exports.crearVehiculo = async(request,response,next) => {
 };
 
 
+//  /vehiculos/find
+exports.buscarVehiculo = async (request, response, next) => {
+
+    const marcaQuery = request.query.marca
+    const anoQuery = request.query.ano
+    
+    try {
+
+        const savedVehiculo = await Vehiculo.find( marcaQuery && anoQuery ? {$and:[{marca: marcaQuery},{ano: anoQuery} ]} : {$or:[{marca: marcaQuery},{ano: anoQuery} ]})
+           
+        response.status(200).json(savedVehiculo)
+
+    } catch (error) {
+        
+        next(error)
+    }
+
+}
+
+
 
 //  /vehiculos/:id
 
@@ -166,21 +186,4 @@ exports.borrarVehiculoId = async (request, response, next) => {
 }
 
 
-//  /vehiculos/find
-exports.buscarVehiculo = async (request, response, next) => {
 
-    const marcaQuery = request.query.marca
-    const anoQuery = request.query.ano
-    
-    try {
-
-        const savedVehiculo = await Vehiculo.find( marcaQuery && anoQuery ? {$and:[{marca: marcaQuery},{ano: anoQuery} ]} : {$or:[{marca: marcaQuery},{ano: anoQuery} ]})
-           
-        response.status(200).json(savedVehiculo)
-
-    } catch (error) {
-        
-        next(error)
-    }
-
-}
