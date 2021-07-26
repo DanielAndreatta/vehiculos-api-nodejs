@@ -14,4 +14,8 @@ GET http://localhost:3000/vehiculos/find?marca=Acura&ano=1996
 
 ###
 
-GET http://localhost:3000/vehiculos/find?marca=Acurã&ano=2010
+GET http://localhost:3000/vehiculos/find?marca=Acura&ano=2010
+
+###
+
+GET http://localhost:3000/vehiculos/find?marca=Fiat&ano=2010
