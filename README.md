@@ -6,7 +6,7 @@ http://#
 
 `GET /vehiculos`
 
-Retorna todos los vehiculos
+Retorna todos los vehículos.
 
 ---
 
