@@ -14,7 +14,7 @@ Retorna todos los vehículos.
 
 Retorna los vehículos de acuerdo al parámetro.
 Acepta los parámetros `marca` y `ano`, ya sea uno u ambos.
-Ejmplo: /vehiculos/find?ano=1996`,`/vehiculos/find?marca=Acura``/vehiculos/find?marca=Acura&ano=1996`.
+Ejmplo: /vehiculos/find?ano=1996`,`/vehiculos/find?marca=Acura`,`/vehiculos/find?marca=Acura&ano=1996`.
 
 ---
 
