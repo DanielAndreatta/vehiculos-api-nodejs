@@ -6,7 +6,7 @@ const Vehiculo = require('../models/Vehiculo')
     //         vehiculo: "Integra GS 1.8",
     //         marca: "Acura",
     //         ano: 1996,
-    //         descripcion: "vehiculo grande",
+    //         descripcion: "descripción del vehículo",
     //         vendido: false,
     //         created: "2021-07-34124134",
     //         updated: "2021-07-34124134"
@@ -15,7 +15,7 @@ const Vehiculo = require('../models/Vehiculo')
     //         vehiculo: "Legend 3.2/3.5",
     //         marca: "Acura",
     //         ano: 1997,
-    //         descripcion: "vehiculo grande",
+    //         descripcion: "descripción del vehículo",
     //         vendido: false,
     //         created: "2021-07-34124134",
     //         updated: "2021-07-34124134"
@@ -24,7 +24,7 @@ const Vehiculo = require('../models/Vehiculo')
     //         vehiculo: "NSX 3.0",
     //         marca: "Acura",
     //         ano: 2000,
-    //         descripcion: "vehiculo grande",
+    //         descripcion: "descripción del vehículo",
     //         vendido: false,
     //         created: "2021-07-34124134",
     //         updated: "2021-07-34124134"
