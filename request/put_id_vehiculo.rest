@@ -47,3 +47,17 @@ Content-Type: application/json
     "descripcion": "descripción del vehículo",
     "vendido": false
 }
+
+
+###
+
+PUT http://localhost:3000/vehiculos/60fe06b1ce926a187c2e8d34
+Content-Type: application/json
+
+{
+    "vehiculo": "Integra GS 1.8",
+    "marca": null,
+    "ano": 1996,
+    "descripcion": "descripción del vehículo",
+    "vendido": false
+}

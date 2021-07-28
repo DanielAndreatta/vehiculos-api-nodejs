@@ -44,6 +44,7 @@ const getAllFromVehiculos = async () => {
 
     const response = await api.get('/vehiculos')
     return {
+        id: response.body.map( id => id.id),
         marca: response.body.map( marca => marca.marca),
         vehiculo: response.body.map( vehiculo => vehiculo.vehiculo),
         ano: response.body.map( ano => ano.ano),

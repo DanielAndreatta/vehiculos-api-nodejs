@@ -145,6 +145,21 @@ describe('test a DELETE(/vehiculos/:id)', () => {
     })
 })
 
+// describe('test a GET(/vehiculos/find)', () => {
+
+//     test('el vehiculo numero 3 contiene modelo = "Punto BLACKMOTION 1.8 Flex 16V 5p."', async () => {
+        
+//         const {id, vehiculo:vehiculoComparar} = await getAllFromVehiculos()
+
+//         await api
+//             .get(`/vehiculos/${id}`)
+//             .expect(200)
+//             .expect('Content-Type', /application\/json/)
+    
+//         expect(vehiculo).toContain(vehiculoComparar)
+//     })
+
+// })
 
 
 afterAll( () => {

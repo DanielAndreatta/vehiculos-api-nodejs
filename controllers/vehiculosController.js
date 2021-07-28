@@ -123,15 +123,23 @@ exports.updateVehiculoId = async (request, response, next) => {
     try {
 
         const {id} = request.params
-        const vehiculoBody = request.body
+        const {vehiculo, marca, ano, descripcion, vendido} = request.body
     
         const newVehiculo = {
-            vehiculo: vehiculoBody.vehiculo,
-            marca: vehiculoBody.marca,
-            ano: vehiculoBody.ano,
-            descripcion: vehiculoBody.descripcion,
-            vendido: vehiculoBody.vendido,
+            vehiculo,
+            marca,
+            ano,
+            descripcion,
+            vendido,
             updated: new Date()
+        }
+
+        const {vehiculo: comprobarVehiculo, marca: comprobarMarca, ano: comprobarAno, descripcion: comprobarDescripcion ,vendido: combrobarVendido} = newVehiculo
+        
+        if(!comprobarVehiculo || !comprobarMarca || !comprobarAno || !comprobarDescripcion || combrobarVendido){
+            return response.status(400).json({
+                error: 'Falta un campo obligatorio'
+            });
         }
 
         const savedVehiculo = await Vehiculo.findByIdAndUpdate(id, newVehiculo, {new: true})
@@ -147,11 +155,11 @@ exports.cambiarEstadoVendido = async (request, response, next) => {
 
     try {
         const { id } = request.params;
-        const vehiculo = await Vehiculo.findById(id);
+        const {vendido} = await Vehiculo.findById(id);
     
         // cambiar el estado
         let estado = false;
-        if(vehiculo.vendido === estado) {
+        if(vendido === estado) {
             estado = true;
         }
     
