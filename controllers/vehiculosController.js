@@ -78,12 +78,12 @@ exports.crearVehiculo = async(request,response,next) => {
 //  /vehiculos/find
 exports.buscarVehiculo = async (request, response, next) => {
 
-    const marcaQuery = request.query.marca
-    const anoQuery = request.query.ano
+    const {marca, ano} = request.query
+
     
     try {
 
-        const savedVehiculo = await Vehiculo.find( marcaQuery && anoQuery ? {$and:[{marca: marcaQuery},{ano: anoQuery} ]} : {$or:[{marca: marcaQuery},{ano: anoQuery} ]})
+        const savedVehiculo = await Vehiculo.find( marca && ano ? {$and:[{marca},{ano} ]} : {$or:[{marca},{ano} ]})
            
         response.status(200).json(savedVehiculo)
 
@@ -123,7 +123,7 @@ exports.updateVehiculoId = async (request, response, next) => {
     try {
 
         const {id} = request.params
-        const {vehiculo, marca, ano, descripcion, vendido} = request.body
+        const {vehiculo, marca, ano, descripcion, vendido = false} = request.body
     
         const newVehiculo = {
             vehiculo,
@@ -134,9 +134,9 @@ exports.updateVehiculoId = async (request, response, next) => {
             updated: new Date()
         }
 
-        const {vehiculo: comprobarVehiculo, marca: comprobarMarca, ano: comprobarAno, descripcion: comprobarDescripcion ,vendido: combrobarVendido} = newVehiculo
+        const {vehiculo: comprobarVehiculo, marca: comprobarMarca, ano: comprobarAno, descripcion: comprobarDescripcion} = newVehiculo
         
-        if(!comprobarVehiculo || !comprobarMarca || !comprobarAno || !comprobarDescripcion || combrobarVendido){
+        if(!comprobarVehiculo || !comprobarMarca || !comprobarAno || !comprobarDescripcion){
             return response.status(400).json({
                 error: 'Falta un campo obligatorio'
             });

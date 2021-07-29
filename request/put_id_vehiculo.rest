@@ -1,11 +1,11 @@
-PUT http://localhost:3000/vehiculos/60fe06b3ce926a187c2e8d38
+PUT http://localhost:3000/vehiculos/60fe06b1ce926a187c2e8d34
 Content-Type: application/json
 
 {
     "vehiculo" : "Integra Prueba 1.0",
     "marca": "Marca",
     "ano" : 2000,
-    "descripcion" : "se ha cambiado la descripcion, marca, el año, nombre y vendido",
+    "descripcion" : "descripción del vehículo",
     "vendido": true
 }
 
@@ -57,7 +57,7 @@ Content-Type: application/json
 {
     "vehiculo": "Integra GS 1.8",
     "marca": null,
-    "ano": 1996,
+    "ano": null,
     "descripcion": "descripción del vehículo",
     "vendido": false
 }
