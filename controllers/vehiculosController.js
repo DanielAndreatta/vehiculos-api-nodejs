@@ -125,6 +125,13 @@ exports.updateVehiculoId = async (request, response, next) => {
         const {id} = request.params
         const {vehiculo, marca, ano, descripcion, vendido = false} = request.body
     
+        
+        if(!vehiculo || !marca || !ano || !descripcion){
+            return response.status(400).json({
+                error: 'Falta un campo obligatorio'
+            });
+        }
+
         const newVehiculo = {
             vehiculo,
             marca,
@@ -134,13 +141,7 @@ exports.updateVehiculoId = async (request, response, next) => {
             updated: new Date()
         }
 
-        const {vehiculo: comprobarVehiculo, marca: comprobarMarca, ano: comprobarAno, descripcion: comprobarDescripcion} = newVehiculo
         
-        if(!comprobarVehiculo || !comprobarMarca || !comprobarAno || !comprobarDescripcion){
-            return response.status(400).json({
-                error: 'Falta un campo obligatorio'
-            });
-        }
 
         const savedVehiculo = await Vehiculo.findByIdAndUpdate(id, newVehiculo, {new: true})
         response.status(200).json(savedVehiculo);
